@@ -27,8 +27,7 @@ export default function App() {
   };
   return (
     <div>
-      <Terminal setEditorCode={setEditorCode}/>
-      <button onClick={onRunCode}>Run code</button>
+      <Terminal setEditorCode={setEditorCode} onRunCode={onRunCode}/>
       <CodeStdout logs={codeLogs}></CodeStdout>
       <CodeOutput output={codeOutput}/>
     </div>
