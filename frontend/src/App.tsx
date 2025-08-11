@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import Terminal from "./components/terminal"
+import Terminal from "./components/terminal/terminal"
 import { loadPyodide, type PyodideAPI } from "pyodide";
-import CodeStdout from "./components/codeStdout";
-import CodeOutput from "./components/codeOutput";
+import CodeStdout from "./components/codeStdout/codeStdout";
+import CodeOutput from "./components/codeOutput/codeOutput";
 export default function App() {
   const [pyodide, setPyodide] = useState<PyodideAPI | undefined>();
   const [editorCode, setEditorCode] = useState('');
