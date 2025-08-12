@@ -15,7 +15,7 @@ export default function App() {
       }).then(pyodide => {
         pyodide.setStdout({
           batched: (msg) => {
-            setCodeLogs(logs => [...logs, msg]);
+            setCodeLogs(logs => [...logs, ">> "+msg]);
           }
         })
         setPyodide(pyodide)
@@ -27,7 +27,7 @@ export default function App() {
     setCodeOutput(output);
   };
   return (
-    <div>
+    <div className="app-container">
       <Terminal setEditorCode={setEditorCode} onRunCode={onRunCode}/>
       <CodeStdout logs={codeLogs}></CodeStdout>
       <CodeOutput output={codeOutput}/>
