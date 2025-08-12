@@ -3,6 +3,7 @@ import Terminal from "./components/terminal/terminal"
 import { loadPyodide, type PyodideAPI } from "pyodide";
 import CodeStdout from "./components/codeStdout/codeStdout";
 import CodeOutput from "./components/codeOutput/codeOutput";
+import './styles/app.scss';
 export default function App() {
   const [pyodide, setPyodide] = useState<PyodideAPI | undefined>();
   const [editorCode, setEditorCode] = useState('');
