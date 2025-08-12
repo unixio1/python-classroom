@@ -1,3 +1,4 @@
+@use "sass:color";
 /* 
 CSS Resets, template: 
 https://www.joshwcomeau.com/css/custom-css-reset/
@@ -57,6 +58,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Custom default styles */
 
+//Scroll bar
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: black; /* track background */
+  border-radius: 5px;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: white; /* thumb color */
+  border-radius: 0.2rem;
+  border: 2px solid #2e2e2e; /* gives padding around thumb */
+}
+
+/* Scrollbar Thumb Hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: color.adjust(#61dafb, $lightness: 15%, $space: hsl);
+  transition-duration: 0.5s;
+}
+
+// Main App
 textarea{
   background-color: #322E42;
 }
