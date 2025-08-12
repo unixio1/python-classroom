@@ -3,7 +3,11 @@ export default function CodeStdout(props: CodeStdoutProps){
   return <div className={styles.output}>
   <span>Logs</span><br/>
   {props.logs && (
-    <code>{props.logs.join('\n')}</code>
+    props.logs.map((log: string, _index: number) => (
+      <><code>
+        {log}
+      </code><br/></>
+    ))
   )}
   </div>
 }
