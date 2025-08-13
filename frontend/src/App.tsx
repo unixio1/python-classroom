@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import Terminal from "./components/terminal"
+import Terminal from "./components/terminal/terminal"
 import { loadPyodide, type PyodideAPI } from "pyodide";
-import CodeStdout from "./components/codeStdout";
-import CodeOutput from "./components/codeOutput";
+import CodeStdout from "./components/codeStdout/codeStdout";
+import CodeOutput from "./components/codeOutput/codeOutput";
+import './styles/app.scss';
 export default function App() {
   const [pyodide, setPyodide] = useState<PyodideAPI | undefined>();
   const [editorCode, setEditorCode] = useState('');
@@ -14,7 +15,7 @@ export default function App() {
       }).then(pyodide => {
         pyodide.setStdout({
           batched: (msg) => {
-            setCodeLogs(logs => [...logs, msg]);
+            setCodeLogs(logs => [...logs, ">> "+msg]);
           }
         })
         setPyodide(pyodide)
@@ -26,9 +27,8 @@ export default function App() {
     setCodeOutput(output);
   };
   return (
-    <div>
-      <Terminal setEditorCode={setEditorCode}/>
-      <button onClick={onRunCode}>Run code</button>
+    <div className="app-container">
+      <Terminal setEditorCode={setEditorCode} onRunCode={onRunCode}/>
       <CodeStdout logs={codeLogs}></CodeStdout>
       <CodeOutput output={codeOutput}/>
     </div>

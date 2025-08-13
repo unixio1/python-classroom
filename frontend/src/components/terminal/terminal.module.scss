@@ -1,0 +1,36 @@
+
+.terminalWrapper{
+  width: 100%;
+  height: 70%;
+}
+
+.utilities{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #180638;
+
+  .buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.1rem;
+    .run{
+      color: green;
+    }
+  }
+
+}
+
+.terminalText{
+  width: 100%;
+  height: 100%;
+  background-color: #1F1745;
+  color: #9C90D4;
+  border: none;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  line-height: 1.5; 
+}
