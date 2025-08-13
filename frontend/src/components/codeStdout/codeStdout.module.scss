@@ -1,7 +1,1 @@
-.output{
-  height: 5rem;
-  padding: 0.5rem;
-  background-color: black;
-  color: white;
-  overflow-y: auto;
-}
+@use '../../styles/output';
