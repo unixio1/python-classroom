@@ -9,9 +9,17 @@ export default function CodeStdout(props: CodeStdoutProps){
       </code><br/></>
     ))
   )}
+  {props.errors && (
+    props.errors.map((error: string, _index: number) => (
+      <><code className={styles.error}>
+        {error}
+      </code><br/></>
+    ))
+  )}
   </div>
 }
 
 interface CodeStdoutProps{
   logs: string[]
+  errors: string[]
 }
