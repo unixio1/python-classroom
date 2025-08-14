@@ -9,6 +9,13 @@ const errorRetrievalScript = `
 import sys
 str(sys.last_value)
 `
+
+const overrideStdinInput = `
+from js import prompt
+def input(p):
+    return prompt(p)
+__builtins__.input = input
+`
 export default function App() {
   const [pyodide, setPyodide] = useState<PyodideAPI | undefined>();
   const [editorCode, setEditorCode] = useState('');
@@ -29,6 +36,7 @@ export default function App() {
             setCodeErrors(errors => [...errors, error]);
           }
         })
+        pyodide.runPython(overrideStdinInput);
         setPyodide(pyodide)
       })
   }, []);
