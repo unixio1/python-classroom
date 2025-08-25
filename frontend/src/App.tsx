@@ -18,7 +18,6 @@ __builtins__.input = input
 `
 export default function App() {
   const [pyodide, setPyodide] = useState<PyodideAPI | undefined>();
-  const [editorCode, setEditorCode] = useState('');
   const [codeLogs, setCodeLogs] = useState<string[]>([]);
   const [codeOutput, setCodeOutput] = useState();
   const [codeErrors, setCodeErrors] = useState<string[]>([]);
@@ -40,11 +39,11 @@ export default function App() {
         setPyodide(pyodide)
       })
   }, []);
-  const onRunCode = async () => {
+  const onRunCode = async (code: string) => {
     setCodeLogs([]);
     setCodeErrors([]);
     try{
-      const output = await pyodide?.runPythonAsync(editorCode);
+      const output = await pyodide?.runPythonAsync(code);
       setCodeOutput(output);
     }catch(error: any){
       const errorMessage = await pyodide?.runPythonAsync(errorRetrievalScript)
@@ -53,7 +52,7 @@ export default function App() {
   };
   return (
     <div className="app-container">
-      <Terminal setEditorCode={setEditorCode} onRunCode={onRunCode}/>
+      <Terminal onRunCode={onRunCode}/>
       <CodeStdout logs={codeLogs} errors={codeErrors}></CodeStdout>
       <CodeOutput output={codeOutput}/>
     </div>

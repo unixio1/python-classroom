@@ -33,7 +33,7 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input, button, textarea, select, div {
   font: inherit;
 }
 /* 8. Avoid text overflows */
@@ -102,4 +102,10 @@ button{
   height: 100vh;
   width: 100vw;
   padding: 1rem;
+}
+
+/* Overriden CodeMirror styles */
+
+.cm-editor{
+  height: 90%
 }
