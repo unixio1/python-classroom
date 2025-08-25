@@ -1,7 +1,7 @@
 .terminalText{
-  overflow-wrap: break-word;
   color: #9C90D4;
   font-family: monospace;
+  height: 100%;
 }
 
 .terminalWrapper{
@@ -15,7 +15,7 @@
   align-items: center;
   padding: 0.5rem;
   background-color: #180638;
-
+  height: 10%;
   .buttons{
     display: flex;
     justify-content: flex-end;
@@ -24,18 +24,5 @@
       color: green;
     }
   }
-
 }
 
-.terminalText{
-  width: 100%;
-  height: 100%;
-  background-color: #1F1745;
-  color: #9C90D4;
-  border: none;
-  border: none;
-  outline: none;
-  resize: none;
-  padding: 10px;
-  line-height: 1.5; 
-}

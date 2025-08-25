@@ -103,3 +103,9 @@ button{
   width: 100vw;
   padding: 1rem;
 }
+
+/* Overriden CodeMirror styles */
+
+.cm-editor{
+  height: 90%
+}
